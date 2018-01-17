@@ -3,16 +3,20 @@
 
 const albums = {
 	toys: {
-		songs: ['Sweet Emotion', 'Uncle Salty'],
-
+		_songs: ['Sweet Emotion', 'Uncle Salty'],
+		get songs() {return this._songs},
+		set songs(xx) {this._songs = xx }
+		/*  oops YOU FORGET 'THIS' ALL THE TIME. */
 	},
 	captain: {
-		songs:['Bitter Fingers', 'Someone Saved'],
-
+		_songs:['Bitter Fingers', 'Someone Saved'],
+		get songs() {return this._songs},
+		set songs(xx) {this._songs = xx}
 	},
 	rope: {
-		songs: ['Safe European', 'Drug Squad']
-
+		_songs: ['Safe European', 'Drug Squad'],
+		get songs() {return this._songs},
+		set songs(xx) {this._songs = xx}
 	},
 
 };
@@ -24,5 +28,6 @@ for (prop in albums) {
 	console.log(albums[prop]);
 }
 console.log(`Attempting to print this complicated object in its entirity: ${albums} There!  Did it.`);
+
 
 
